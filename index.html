@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Ana Maria Kezia Hutagalung</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1e40af;
+            --accent-green: #a3e635;
+            --accent-red: #ef4444;
+            --bg-color: #f3f4f6;
+            --text-dark: #1f2937;
+            --yellow-pop: #fde047;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 850px;
+            background: white;
+            padding: 50px;
+            border-radius: 40px;
+            box-shadow: 12px 12px 0px #000;
+            border: 3px solid #000;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Dekorasi Bintang & Silang */
+        .decor {
+            position: absolute;
+            font-weight: bold;
+            font-size: 24px;
+            pointer-events: none;
+        }
+
+        /* Header Section */
+        header {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 110px;
+            line-height: 0.8;
+            margin: 0;
+            color: var(--primary-blue);
+            font-weight: 800;
+            letter-spacing: -4px;
+        }
+
+        .badge-edition {
+            background: var(--accent-green);
+            color: var(--primary-blue);
+            padding: 18px;
+            border-radius: 50%;
+            display: inline-block;
+            font-weight: 800;
+            font-size: 14px;
+            text-align: center;
+            transform: rotate(-15deg);
+            border: 2px solid #000;
+            position: absolute;
+            top: 45px;
+            left: 110px;
+            line-height: 1.2;
+        }
+
+        .role-tag {
+            background: var(--accent-red);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: bold;
+            position: absolute;
+            right: 0;
+            top: 40px;
+            border: 2px solid #000;
+        }
+
+        /* Profile Section */
+        .profile-wrapper {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+            align-items: flex-start;
+        }
+
+        .bio {
+            flex: 1;
+        }
+
+        .bio h2 {
+            font-size: 60px;
+            color: var(--primary-blue);
+            margin: 0 0 10px 0;
+            font-weight: 800;
+        }
+
+        .bio p {
+            line-height: 1.7;
+            font-size: 16px;
+            color: #374151;
+        }
+
+        .profile-card {
+            background: white;
+            padding: 12px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.05);
+            width: 260px;
+            border: 1px solid #e5e7eb;
+            text-align: center;
+        }
+
+        .profile-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 15px;
+            background: #eee;
+        }
+
+        .contact-info {
+            text-align: left;
+            font-size: 13px;
+            margin-top: 15px;
+            line-height: 1.8;
+            padding: 0 5px;
+        }
+
+        /* Link Instagram Button */
+        .insta-pill {
+            background: var(--yellow-pop);
+            padding: 12px 20px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            font-weight: 800;
+            margin-top: 25px;
+            border: 2.5px solid #000;
+            transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .insta-pill:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: 5px 5px 0px #000;
+        }
+
+        /* Grid Info */
+        .grid-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 60px;
+        }
+
+        h3 {
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            font-size: 22px;
+            border-bottom: 5px solid var(--primary-blue);
+            display: inline-block;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-date {
+            font-weight: bold;
+            color: var(--primary-blue);
+            font-size: 14px;
+        }
+
+        .info-title {
+            font-weight: 800;
+            display: block;
+            margin-top: 5px;
+            font-size: 16px;
+        }
+
+        /* Expertise Stickers */
+        .stickers {
+            display: flex;
+            gap: 12px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+
+        .sticker {
+            padding: 8px 18px;
+            border-radius: 12px;
+            border: 2px solid #000;
+            font-weight: bold;
+            color: white;
+            font-size: 14px;
+        }
+
+        .blue { background: #3b82f6; transform: rotate(-3deg); }
+        .purple { background: #a855f7; transform: rotate(2deg); }
+        .orange { background: #f97316; transform: rotate(-1deg); }
+
+        @media (max-width: 768px) {
+            .profile-wrapper, .grid-section {
+                flex-direction: column;
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 70px; }
+            .badge-edition { top: 20px; left: 70px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <div class="role-tag">Digital Business</div>
+        <div class="title-box">
+            <div class="badge-edition">2026<br>Edition</div>
+            <h1>Port<br>folio</h1>
+        </div>
+    </header>
+
+    <section class="profile-wrapper">
+        <div class="bio">
+            <h2>Hello!</h2>
+            <p>
+                It’s <strong>Key</strong>! A student of the Faculty of Economics and Business, majoring in Digital Business, based in Cikarang. 
+                I am interested in challenging myself to gain new knowledge and develop my creativity through fun and creative designs. 
+                I consider myself a hard-working individual who adapts easily. I hope my abilities can contribute to the growth of your company.
+            </p>
+            
+            <a href="https://www.instagram.com/ana_key00?igsh=cTdlZTJsYmx1d3Rm" target="_blank" class="insta-pill">
+                📸 @ana_key00
+            </a>
+        </div>
+
+        <div class="profile-card">
+            <img src="foto-key.jpg" alt="Ana Maria Kezia Hutagalung">
+            <div class="contact-info">
+                <strong>Ana Maria Kezia Hutagalung</strong><br>
+                📍 Cikarang, Indonesia<br>
+                ✉️ keziahutagalunggg@gmail.com
+            </div>
+        </div>
+    </section>
+
+    <div class="grid-section">
+        <div class="experience">
+            <h3>Experiences</h3>
+            <div class="info-item">
+                <span class="info-date">2023 - 2024</span><br>
+                <span class="info-title">PART TIME EVENT ORGANIZER</span>
+                <span>FnB Section</span>
+            </div>
+        </div>
+
+        <div class="education">
+            <h3>Education</h3>
+            <div class="info-item">
+                <span class="info-date">2021 - 2024</span>
+                <span class="info-title">SMKN 4 KOTA BEKASI</span>
+            </div>
+            <div class="info-item">
+                <span class="info-date">2024 - NOW</span>
+                <span class="info-title">UNIVERSITAS PELITA BANGSA</span>
+                <span>Bisnis Digital</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="expertise">
+        <h3>Expertise</h3>
+        <div class="stickers">
+            <div class="sticker blue">Event Planning</div>
+            <div class="sticker purple">Digital Marketing</div>
+            <div class="sticker orange">Food & Beverage</div>
+            <div class="sticker blue">Creative Design</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

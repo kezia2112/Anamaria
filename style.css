@@ -1,0 +1,203 @@
+/* --- VARIABLES --- */
+:root {
+    --primary-blue: #1e40af;
+    --accent-green: #a3e635;
+    --accent-red: #ef4444;
+    --bg-color: #f3f4f6;
+    --text-dark: #1f2937;
+    --yellow-pop: #fde047;
+}
+
+/* --- BASE STYLES --- */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 850px;
+    background: white;
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 12px 12px 0px #000; /* Shadow tegas ala neubrutalism */
+    border: 3px solid #000;
+    position: relative;
+    overflow: hidden;
+}
+
+/* --- HEADER SECTION --- */
+header {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+h1 {
+    font-size: 110px;
+    line-height: 0.8;
+    margin: 0;
+    color: var(--primary-blue);
+    font-weight: 800;
+    letter-spacing: -4px;
+}
+
+.badge-edition {
+    background: var(--accent-green);
+    color: var(--primary-blue);
+    padding: 18px;
+    border-radius: 50%;
+    display: inline-block;
+    font-weight: 800;
+    font-size: 14px;
+    text-align: center;
+    transform: rotate(-15deg);
+    border: 2px solid #000;
+    position: absolute;
+    top: 45px;
+    left: 110px;
+    line-height: 1.2;
+}
+
+.role-tag {
+    background: var(--accent-red);
+    color: white;
+    padding: 8px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    position: absolute;
+    right: 0;
+    top: 40px;
+    border: 2px solid #000;
+}
+
+/* --- PROFILE & BIO --- */
+.profile-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    align-items: flex-start;
+}
+
+.bio {
+    flex: 1;
+}
+
+.bio h2 {
+    font-size: 60px;
+    color: var(--primary-blue);
+    margin: 0 0 10px 0;
+    font-weight: 800;
+}
+
+.bio p {
+    line-height: 1.7;
+    font-size: 16px;
+    color: #374151;
+}
+
+.profile-card {
+    background: white;
+    padding: 12px;
+    border-radius: 20px;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.05);
+    width: 260px;
+    border: 1px solid #e5e7eb;
+}
+
+.profile-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    background: #eee;
+}
+
+/* --- INTERACTIVE BUTTON --- */
+.insta-pill {
+    background: var(--yellow-pop);
+    padding: 12px 20px;
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+    margin-top: 25px;
+    border: 2.5px solid #000;
+    transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.insta-pill:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 5px 5px 0px #000;
+}
+
+/* --- GRID SECTION --- */
+.grid-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 60px;
+}
+
+h3 {
+    color: var(--primary-blue);
+    text-transform: uppercase;
+    font-size: 22px;
+    border-bottom: 5px solid var(--primary-blue);
+    display: inline-block;
+    margin-bottom: 25px;
+    font-weight: 800;
+}
+
+.info-item {
+    margin-bottom: 25px;
+}
+
+.info-date {
+    font-weight: bold;
+    color: var(--primary-blue);
+    font-size: 14px;
+}
+
+.info-title {
+    font-weight: 800;
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+}
+
+/* --- EXPERTISE STICKERS --- */
+.stickers {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.sticker {
+    padding: 8px 18px;
+    border-radius: 12px;
+    border: 2px solid #000;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+}
+
+.blue { background: #3b82f6; transform: rotate(-3deg); }
+.purple { background: #a855f7; transform: rotate(2deg); }
+.orange { background: #f97316; transform: rotate(-1deg); }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .profile-wrapper, .grid-section {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+    h1 { font-size: 70px; }
+    .badge-edition { top: 20px; left: 70px; }
+}
